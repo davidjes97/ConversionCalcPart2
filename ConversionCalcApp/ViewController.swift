@@ -25,8 +25,8 @@ class ViewController: MainViewController, SettingsViewControllerDelegate {
     @IBOutlet weak var tUnitLabel: UILabel!
     @IBOutlet weak var fUnitLabel: UILabel!
     
-    @IBOutlet weak var tTextField: DecimalMinusTextField!
-    @IBOutlet weak var fTextField: DecimalMinusTextField!
+    @IBOutlet weak var tTextField: ConversionCalcTextField!
+    @IBOutlet weak var fTextField: ConversionCalcTextField!
     
     
     override func viewDidLoad() {
@@ -61,16 +61,16 @@ class ViewController: MainViewController, SettingsViewControllerDelegate {
         if mode == .Length {
             mode = CalculatorMode.Volume
             titleLabel.text = "Volume Conversion Calculator"
-            fTextField.placeholder = "Enter volume in \(fVolumeUnits)"
-            tTextField.placeholder = "Enter volume in \(tVolumeUnits)"
+            fTextField.attributedPlaceholder = NSAttributedString(string: "Enter volume in \(fVolumeUnits)", attributes: [NSAttributedString.Key.foregroundColor:FOREGROUND_COLOR])
+            tTextField.attributedPlaceholder = NSAttributedString(string: "Enter volume in \(tVolumeUnits)", attributes: [NSAttributedString.Key.foregroundColor:FOREGROUND_COLOR])
             tUnitLabel.text = "\(tVolumeUnits)"
             fUnitLabel.text = "\(fVolumeUnits)"
         }
         else{
             mode = CalculatorMode.Length
             titleLabel.text = "Length Conversion Calculator"
-            fTextField.placeholder = "Enter length in \(fLengthUnits)"
-            tTextField.placeholder = "Enter length in \(tLengthUnits)"
+            fTextField.attributedPlaceholder = NSAttributedString(string: "Enter volume in \(fLengthUnits)", attributes: [NSAttributedString.Key.foregroundColor:FOREGROUND_COLOR])
+            tTextField.attributedPlaceholder = NSAttributedString(string: "Enter volume in \(tVolumeUnits)", attributes: [NSAttributedString.Key.foregroundColor:FOREGROUND_COLOR])
             tUnitLabel.text = "\(tLengthUnits)"
             fUnitLabel.text = "\(fLengthUnits)"
         }
